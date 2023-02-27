@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-  <packageSources>
-    <clear />
-    <add key="Tailspin.SpaceGame.Web.Model" value="https://pkgs.dev.azure.com/apimlz/4d8c693d-c173-4710-97f6-b442cf78f8d8/_packaging/Tailspin.SpaceGame.Web.Model/nuget/v3/index.json" />
-  </packageSources>
-</configuration>
