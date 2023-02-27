@@ -35,10 +35,15 @@ steps:
     minorVersion: '0'
     patchVersion: '0'
  
-- task: NuGetCommand@2
-  displayName: 'Publish NuGet package'
-  inputs:
-    command: push
-    feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Model' #$(System.TeamProject)/Tailspin.SpaceGame.Web.Models
-    allowPackageConflicts: true
-  condition: succeeded()
+#- task: NuGetCommand@2
+#  displayName: 'Publish NuGet package'
+#  inputs:
+#    command: push
+#    feedPublish: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Model' #$(System.TeamProject)/Tailspin.SpaceGame.Web.Models
+#    allowPackageConflicts: true
+#  condition: succeeded()
+- task: NuGetAuthenticate@0
+  displayName: 'Authenticate in NuGet feed'
+- script: dotnet nuget push $(PATH_PIPELINE_ARTIFACT_NAME)/**/*.nupkg --source $(NUGET_FEED) --api-key $(NUGET_API_KEY)
+  displayName: 'Uploads nuGet packages'
+ 
