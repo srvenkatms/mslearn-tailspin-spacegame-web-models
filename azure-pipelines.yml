@@ -1,6 +1,8 @@
 pool:
   vmImage: 'ubuntu-20.04'
-
+  #name: AgentPoolName(e.g. alm-aws-pool)
+  # demands:
+  #  - agent.name -equals Agentname (e.g. deploy-05-agent1
 variables:
   buildConfiguration: 'Release'
   dotnetSdkVersion: '6.x'
